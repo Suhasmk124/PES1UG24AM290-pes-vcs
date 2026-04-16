@@ -52,6 +52,7 @@ int object_exists(const ObjectID *id) {
 // ─── IMPLEMENTATION ─────────────────────────────────────────────────────────
 
 // Write object
+// Added Hashing Logic
 int object_write(ObjectType type, const void *data, size_t len, ObjectID *id_out) {
     char header[64];
     const char *type_str;

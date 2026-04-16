@@ -54,6 +54,7 @@ int object_exists(const ObjectID *id) {
 
 // Write object
 // atomic write using temp file
+// formatting check
 int object_write(ObjectType type, const void *data, size_t len, ObjectID *id_out) {
     char header[64];
     const char *type_str;

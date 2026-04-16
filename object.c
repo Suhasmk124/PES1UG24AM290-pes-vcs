@@ -10,6 +10,7 @@
 #include <openssl/evp.h>
 
 // ─── PROVIDED ────────────────────────────────────────────────────────────────
+//Added Hashing Logic
 
 void hash_to_hex(const ObjectID *id, char *hex_out) {
     for (int i = 0; i < HASH_SIZE; i++) {
@@ -52,7 +53,7 @@ int object_exists(const ObjectID *id) {
 // ─── IMPLEMENTATION ─────────────────────────────────────────────────────────
 
 // Write object
-// Added Hashing Logic
+// atomic write using temp file
 int object_write(ObjectType type, const void *data, size_t len, ObjectID *id_out) {
     char header[64];
     const char *type_str;
